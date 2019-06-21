@@ -1,0 +1,43 @@
+body
+{
+    background: #333842;
+    font-family: 'Calibri';
+    color:#e2e2d7;
+}
+
+
+#container
+{
+    width:1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+a
+{
+    text-decoration:none;
+    color: #6b911a;
+}
+a:hover
+{
+    color:#d8f796;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input:hover[type=submit] {
+    padding:5px 15px;
+    background:#bbb;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}

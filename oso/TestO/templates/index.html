@@ -1,3 +1,5 @@
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -5,24 +7,24 @@
     <title>Title</title>
 </head>
 <body>
-
+<div id="container">
 <h1>Witaj w teście osobowości.</h1>
 <h2>Wkrótce dowiesz się, kim naprawdę jesteś.</h2>
 
-<h3>lista pytań:</h3>
+
 {% if pytania %}
 
-    <ul>
-        {% for p in pytania %}
+    <!--<ul>-->
+        <!--{% for p in pytania %}-->
 
-        <li><a href="{{ p.id }} "><b>{{ p.nazwa }}</b></a></li>
-        {% endfor %}
-    </ul>
+        <!--<li><a href="{{ p.id }} "><b>{{ p.nazwa }}</b></a></li>-->
+        <!--{% endfor %}-->
+    <!--</ul>-->
 <a href="1"><b>ROZPOCZNIJ TEST</b></a>
 
 {% else %}
     <p>nie masz pytań. Dodaj je.</p>
 {% endif %}
-
+</div id="container">
 </body>
 </html>
