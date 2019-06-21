@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<br lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+<!--treść pytań:-->
+
+<br>
+<!--ile pytań : {{ ile }}</br>-->
+{% if nr_pytania %}
+<h2>{{ nr_pytania }}</h2>
+    <h2>{{ nr_pytania.tresc }}</h2>
+
+
+{% else %}
+    <p>nie ma takiego pytania.</p>
+{% endif %}
+
+
+{% if odps %}
+<!--{{ odps }}-->
+<form action="{% url 'Zapisz' nr_pytania.id %}" method="post">
+    {% csrf_token %}
+
+    {% for o in odps %}<h2>
+    <input type="radio" name="o" id="o{{ forloop.counter }}" value="{{ o.id }}">
+    <label for="o{{ forloop.counter }}">{{ o.odps2 }}</label><br></h2>
+{% endfor %}
+   <br>
+<input type="submit" value="Zapisz">
+</form>
+
+
+</br></br>
+<a href="{{ nr_pytania.id|add:1  }}  "><b>dalej</b></a>
+
+
+
+{% else %}
+    <p>nie ma odpowiedzi.</p>
+{% endif %}
+
+
+
+</body>
+</html>

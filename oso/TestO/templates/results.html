@@ -1,0 +1,25 @@
+{% if nr_pyt %}
+pytanie : {{ nr_pyt }}  ilosc pytań : {{ ile }}
+    <!--nr_pyt :     {{ nr_pyt }}<br>-->
+    <!--nr_pyt.id :  {{ nr_pyt.id }}<br>-->
+    <!--nr_pyt.tresc : <h1>{{ nr_pyt.tresc }}</h1>-->
+<h2>
+<ul>
+{% for choice in odps %}
+  <h2>  {{ choice.odps2 }} : {{ choice.licznik }}</h2>
+{% endfor %}
+</ul>
+
+
+{% else %}
+    <p>nie ma takiego pytania.</p>
+{% endif %}
+
+
+{% if nr_pyt == ile %}<br>
+Koniec
+{% else %}
+<br><a href="{% url 'detail' nr_pyt|add:1 %}"><b>Następne pytanie</b></a>
+{% endif %}
+
+
