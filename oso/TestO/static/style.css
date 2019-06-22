@@ -14,6 +14,26 @@ body
     margin-top: 100px;
 }
 
+#obraz
+{
+float:left;
+margin-left:100px;
+margin-right:100px;
+}
+
+#obraz2
+{
+float:left;
+margin-left:100px;
+margin-right:100px;
+}
+
+#opis
+{
+float:left;
+width: 600px;
+}
+
 a
 {
     text-decoration:none;

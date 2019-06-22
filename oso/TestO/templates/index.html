@@ -8,23 +8,22 @@
 </head>
 <body>
 <div id="container">
+    <div id="obraz2">
+        <img width = 300px src="{% static 'postac.jpg'%}" alt="">
+    </div>
+    <div id="opis">
 <h1>Witaj w teście osobowości.</h1>
 <h2>Wkrótce dowiesz się, kim naprawdę jesteś.</h2>
-
-
+<br><br><br>
 {% if pytania %}
 
-    <!--<ul>-->
-        <!--{% for p in pytania %}-->
-
-        <!--<li><a href="{{ p.id }} "><b>{{ p.nazwa }}</b></a></li>-->
-        <!--{% endfor %}-->
-    <!--</ul>-->
 <a href="1"><b>ROZPOCZNIJ TEST</b></a>
 
 {% else %}
     <p>nie masz pytań. Dodaj je.</p>
 {% endif %}
+        </div>
+
 </div id="container">
 </body>
 </html>

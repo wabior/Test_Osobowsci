@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from TestO import views
 
 urlpatterns = [
@@ -22,5 +24,8 @@ urlpatterns = [
     path(''      , views.index, name='index'),
     path('<Pytanie_id>', views.detail, name='detail'),
     path('<Pytanie_id>/Zapisz/', views.Zapisz, name='Zapisz'),
+    path('<Pytanie_id>/Zapisz2/', views.Zapisz2, name='Zapisz2'),
     path('<Pytanie_id>/results/', views.results, name='results'),
-]
+    path('wynik/', views.wynik, name='wynik'),
+    path('wynik2/', views.wynik2, name='wynik2'),
+] +static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT )

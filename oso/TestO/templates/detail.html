@@ -26,22 +26,30 @@
 
 {% if odps %}
 <!--{{ odps }}-->
-<form action="{% url 'Zapisz' nr_pytania.id %}" method="post">
+
+{% if nr_pytania.id < ile %}
+    <form action="{% url 'Zapisz2' nr_pytania.id|add:1 %}" method="post">
+    {% else %}
+       <form action="{% url 'Zapisz2' nr_pytania.id %}" method="post">
+           {% endif %}
+
     {% csrf_token %}
 
     {% for o in odps %}<h2>
     <input type="radio" name="o" id="o{{ forloop.counter }}" value="{{ o.id }}">
     <label for="o{{ forloop.counter }}">{{ o.odps2 }}</label><br></h2>
 {% endfor %}
-   <br>
-<input type="submit" value="Zapisz">
-</form>
 
+{% if nr_pytania.id < ile %}
+    <input type="submit" value="Zapisz"><br><br>
+    <a href="{{ nr_pytania.id|add:1  }}  "><b>dalej bez zapisywania</b></a>
+{% else %}
+           <input type="submit" value="Zapisz"><br><br>
+    <a href="{% url 'results' ile %} "><b>POKAŻ PUNKTACJE</b></a><br><br>
+    <!--<a href="{% url 'wynik' %}"><b>POKAŻ MOJĄ OSOBOWOŚĆ</b></a>-->
+{% endif %}
 
-</br></br>
-<a href="{{ nr_pytania.id|add:1  }}  "><b>dalej</b></a>
-
-
+    </form>
 
 {% else %}
     <p>nie ma odpowiedzi.</p>
